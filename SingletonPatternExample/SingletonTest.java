@@ -1,4 +1,4 @@
-package com.cognizant.singleton;
+
 
 public class SingletonTest {
     public static void main(String[] args) {

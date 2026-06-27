@@ -1,4 +1,4 @@
-package com.cognizant.singleton;
+
 
 /**
  * Exercise 1: Implementing the Singleton Pattern
