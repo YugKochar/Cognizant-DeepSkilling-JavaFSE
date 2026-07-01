@@ -1,0 +1,8 @@
+com\deepskilling\hibernate\HibernateConfig.class
+com\deepskilling\hibernate\entity\Project.class
+com\deepskilling\hibernate\repository\DepartmentRepository.class
+com\deepskilling\hibernate\entity\Employee.class
+com\deepskilling\hibernate\repository\EmployeeRepository.class
+com\deepskilling\hibernate\repository\ProjectRepository.class
+com\deepskilling\hibernate\entity\Department.class
+com\deepskilling\hibernate\HibernateApplication.class
