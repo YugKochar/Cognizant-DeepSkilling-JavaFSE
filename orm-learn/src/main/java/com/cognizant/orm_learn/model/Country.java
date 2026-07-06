@@ -1,36 +1,37 @@
 package com.cognizant.orm_learn.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.FetchType;
-import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Entity
-@Table(name="country")
 public class Country {
 
-    @Id
-    @Column(name="co_code")
-    private String code;
+    private static final Logger LOGGER = LoggerFactory.getLogger(Country.class);
 
-    @Column(name="co_name")
+    private String code;
     private String name;
 
-    // One Country has Many Stock Exchanges.
-    // mappedBy points to the 'country' variable inside the StockExchange class.
-    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY)
-    private List<StockExchange> stockExchanges;
+    // No-argument constructor required for XML property reflection injection
+    public Country() {
+        LOGGER.debug("Inside Country Constructor.");
+    }
 
-    // Getters and Setters
-    public String getCode() { return code; }
-    public void setCode(String code) { this.code = code; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public List<StockExchange> getStockExchanges() { return stockExchanges; }
-    public void setStockExchanges(List<StockExchange> stockExchanges) { this.stockExchanges = stockExchanges; }
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        LOGGER.debug("Setting Code: {}", code);
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        LOGGER.debug("Setting Name: {}", name);
+        this.name = name;
+    }
 
     @Override
     public String toString() {
