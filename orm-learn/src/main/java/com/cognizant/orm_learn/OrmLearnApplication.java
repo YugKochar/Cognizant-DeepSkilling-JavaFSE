@@ -7,34 +7,47 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import com.cognizant.orm_learn.model.Country;
+import com.cognizant.orm_learn.model.StockExchange;
 import com.cognizant.orm_learn.service.CountryService;
+import com.cognizant.orm_learn.service.StockExchangeService;
 
 @SpringBootApplication
 public class OrmLearnApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(OrmLearnApplication.class);
 	private static CountryService countryService;
+	private static StockExchangeService stockExchangeService;
 
 	public static void main(String[] args) {
-		// Initialize the application context
 		ApplicationContext context = SpringApplication.run(OrmLearnApplication.class, args);
 		LOGGER.info("Inside main");
 
-		// Retrieve the CountryService bean from the Spring context
 		countryService = context.getBean(CountryService.class);
+		stockExchangeService = context.getBean(StockExchangeService.class);
 
-		// Execute the test method to fetch and display the countries
-		testGetAllCountries();
+		// --- Run Feature Tests ---
+		testSearchCountriesContaining();
+		testSearchCountriesStartingWith();
+		testGetAllStockExchangesRelationship();
 	}
 
-	private static void testGetAllCountries() {
-		LOGGER.info("Start");
+	private static void testSearchCountriesContaining() {
+		LOGGER.info("--- Testing Query Method: Containing 'in' Sorted ---");
+		List<Country> countries = countryService.searchCountriesContainingSorted("in", "name");
+		LOGGER.debug("Countries containing 'in': {}", countries);
+	}
 
-		// Fetch list of countries from the service layer
-		List<Country> countries = countryService.getAllCountries();
+	private static void testSearchCountriesStartingWith() {
+		LOGGER.info("--- Testing Query Method: Starting With 'Un' ---");
+		List<Country> countries = countryService.searchCountriesStartingWith("Un");
+		LOGGER.debug("Countries starting with 'Un': {}", countries);
+	}
 
-		// Log the retrieved countries array
-		LOGGER.debug("countries={}", countries);
-		LOGGER.info("End");
+	private static void testGetAllStockExchangesRelationship() {
+		LOGGER.info("--- Testing O/R Mapping: ManyToOne Relationship ---");
+		List<StockExchange> exchanges = stockExchangeService.getAllStockExchanges();
+		for (StockExchange se : exchanges) {
+			LOGGER.debug("Exchange: {} belongs to Country: {}", se.getName(), se.getCountry().getName());
+		}
 	}
 }
