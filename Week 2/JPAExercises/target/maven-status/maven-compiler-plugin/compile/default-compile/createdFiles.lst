@@ -1,0 +1,4 @@
+com\deepskilling\jpa\entity\Course.class
+com\deepskilling\jpa\entity\Enrollment.class
+com\deepskilling\jpa\entity\Student.class
+com\deepskilling\jpa\service\EnrollmentService.class
