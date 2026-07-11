@@ -1,0 +1,26 @@
+2026-06-27 13:50:08.892 [main] INFO  LoggingIntegrationTest - Starting user registration test
+2026-06-27 13:50:08.895 [main] DEBUG LoggingIntegrationTest - Registering user: vinay@deepskilling.com
+2026-06-27 13:50:08.895 [main] DEBUG UserService - Attempting to register user with email: vinay@deepskilling.com
+2026-06-27 13:50:08.897 [main] INFO  UserService - User successfully registered: vinay@deepskilling.com
+2026-06-27 13:50:08.897 [main] INFO  LoggingIntegrationTest - Test passed: User registered successfully
+2026-06-27 13:50:08.898 [main] INFO  LoggingIntegrationTest - Testing duplicate user registration
+2026-06-27 13:50:08.899 [main] DEBUG UserService - Attempting to register user with email: user@example.com
+2026-06-27 13:50:08.899 [main] INFO  UserService - User successfully registered: user@example.com
+2026-06-27 13:50:08.899 [main] DEBUG LoggingIntegrationTest - Attempting duplicate registration
+2026-06-27 13:50:08.899 [main] DEBUG UserService - Attempting to register user with email: user@example.com
+2026-06-27 13:50:08.900 [main] WARN  UserService - User registration failed: Email already registered - user@example.com
+2026-06-27 13:50:08.900 [main] WARN  LoggingIntegrationTest - Expected exception caught: Email already registered
+2026-06-27 13:50:08.900 [main] INFO  LoggingIntegrationTest - Test passed: Duplicate registration prevented
+2026-06-27 13:52:09.134 [main] INFO  LoggingIntegrationTest - Starting user registration test
+2026-06-27 13:52:09.137 [main] DEBUG LoggingIntegrationTest - Registering user: vinay@deepskilling.com
+2026-06-27 13:52:09.138 [main] DEBUG UserService - Attempting to register user with email: vinay@deepskilling.com
+2026-06-27 13:52:09.139 [main] INFO  UserService - User successfully registered: vinay@deepskilling.com
+2026-06-27 13:52:09.139 [main] INFO  LoggingIntegrationTest - Test passed: User registered successfully
+2026-06-27 13:52:09.140 [main] INFO  LoggingIntegrationTest - Testing duplicate user registration
+2026-06-27 13:52:09.140 [main] DEBUG UserService - Attempting to register user with email: user@example.com
+2026-06-27 13:52:09.140 [main] INFO  UserService - User successfully registered: user@example.com
+2026-06-27 13:52:09.140 [main] DEBUG LoggingIntegrationTest - Attempting duplicate registration
+2026-06-27 13:52:09.140 [main] DEBUG UserService - Attempting to register user with email: user@example.com
+2026-06-27 13:52:09.140 [main] WARN  UserService - User registration failed: Email already registered - user@example.com
+2026-06-27 13:52:09.140 [main] WARN  LoggingIntegrationTest - Expected exception caught: Email already registered
+2026-06-27 13:52:09.141 [main] INFO  LoggingIntegrationTest - Test passed: Duplicate registration prevented
