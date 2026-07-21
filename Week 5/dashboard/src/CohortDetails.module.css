@@ -1,0 +1,49 @@
+.box {
+    border: 2px solid #007bff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box h3 {
+    color: #007bff;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.box p {
+    color: #333;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.box .status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.box .status.ongoing {
+    background-color: #28a745;
+    color: white;
+}
+
+.box .status.completed {
+    background-color: #dc3545;
+    color: white;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+}
